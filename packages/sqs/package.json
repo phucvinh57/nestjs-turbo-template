@@ -1,0 +1,43 @@
+{
+	"name": "@fmv/sqs",
+	"version": "0.0.1",
+	"private": true,
+	"license": "UNLICENSED",
+	"scripts": {
+		"dev": "tsc -w",
+		"build": "tsc",
+		"clean": "rm -rf dist",
+		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+		"test": "jest"
+	},
+	"main": "dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"./dist/**"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./*": {
+			"import": "./dist/*.js",
+			"require": "./dist/*.js"
+		}
+	},
+	"dependencies": {
+		"@aws-sdk/client-sqs": "^3.848.0",
+		"@fmv/common": "workspace:*",
+		"@fmv/config": "workspace:*",
+		"@nestjs/common": "^11.1.4",
+		"@nestjs/config": "^4.0.2",
+		"@nestjs/core": "^11.1.4"
+	},
+	"devDependencies": {
+		"@fmv/config-typescript": "workspace:*",
+		"@types/node": "^24.0.14",
+		"ts-loader": "^9.5.2",
+		"ts-node": "^10.9.2",
+		"typescript": "5.8.3"
+	}
+}

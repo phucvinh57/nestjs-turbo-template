@@ -1,0 +1,51 @@
+{
+	"name": "@fmv/db",
+	"version": "0.0.1",
+	"private": true,
+	"license": "UNLICENSED",
+	"scripts": {
+		"build": "prisma generate && tsc",
+		"generate": "prisma generate",
+		"pull": "prisma db pull",
+		"migrate": "prisma migrate dev",
+		"deploy": "prisma migrate deploy",
+		"studio": "prisma studio",
+		"seed": "prisma db seed",
+		"exec": "ts-node"
+	},
+	"main": "dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"./dist/**"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./*": {
+			"import": "./dist/*.js",
+			"require": "./dist/*.js"
+		}
+	},
+	"dependencies": {
+		"@prisma/client": "^6.12.0",
+		"prisma-extension-pagination": "^0.7.5"
+	},
+	"devDependencies": {
+		"@aws-sdk/client-s3": "^3.848.0",
+		"@faker-js/faker": "^9.9.0",
+		"@types/node": "^24.0.14",
+		"dotenv": "^17.2.0",
+		"pino": "^9.7.0",
+		"pino-pretty": "^13.0.0",
+		"prisma": "^6.12.0",
+		"stripe": "^18.3.0",
+		"ts-node": "^10.9.2",
+		"typescript": "5.8.3"
+	},
+	"prisma": {
+		"seed": "ts-node prisma/seed/seed.ts",
+		"schema": "./prisma"
+	}
+}

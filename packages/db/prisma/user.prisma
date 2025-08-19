@@ -1,0 +1,17 @@
+model User {
+  id        String   @id @default(cuid()) @db.VarChar(25)
+  email     String   @unique @db.VarChar(64)
+  password  String?  @db.Text
+  saltRound Int?     @default(10) @map("salt_round")
+  name      String?  @map("real_name") @db.VarChar(128)
+  phone     String?  @db.VarChar(32)
+  settings  Json     @default("{}") @db.JsonB
+  avatarUrl String?  @db.Text
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  oauthAccounts OAuthAccount[]
+  assets        Asset[]
+
+  @@map("users")
+}

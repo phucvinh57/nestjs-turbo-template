@@ -1,0 +1,13 @@
+model Asset {
+  owner   User?   @relation(fields: [ownerId], references: [id])
+  ownerId String? @map("owner_id") @db.VarChar(25)
+
+  id         String    @id @default(cuid()) @db.VarChar(256)
+  name       String    @db.VarChar(255)
+  extension  String    @db.VarChar(10)
+  mimeType   String    @map("mime_type") @db.VarChar(255)
+  isPublic   Boolean   @default(false) @map("is_public")
+  uploadedAt DateTime? @map("uploaded_at") @db.Timestamp(6)
+
+  @@map("assets")
+}

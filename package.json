@@ -1,0 +1,52 @@
+{
+	"name": "fmv-apis",
+	"author": "Nguyen Phuc Vinh",
+	"version": "0.0.1",
+	"private": true,
+	"license": "MIT",
+	"description": "HELIX API BACKEND SITE",
+	"contributors": [
+		{
+			"name": "Nguyen Phuc Vinh",
+			"email": "npvinh@quoxent.com"
+		}
+	],
+	"scripts": {
+		"dev": "turbo dev --concurrency=15",
+		"dev:api": "turbo dev --filter=fmv-api --concurrency=2",
+		"build": "turbo build",
+		"build:fmv": "turbo build --filter=fmv-api --concurrency=2",
+		"format": "biome format --write",
+		"lint": "pnpm biome check --write",
+		"test": "turbo test",
+		"test:e2e": "turbo test:e2e",
+		"commit": "cz",
+		"release": "standard-version --no-verify",
+		"prepare": "lefthook install"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.2",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@fmv/config-typescript": "workspace:*",
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"lefthook": "^1.12.2",
+		"turbo": "^2.5.5"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"packageManager": "pnpm@10.13.1",
+	"engines": {
+		"pnpm": ">=9",
+		"node": ">=22"
+	}
+}

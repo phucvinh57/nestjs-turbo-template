@@ -1,0 +1,13 @@
+*
+!apps/**
+!data/**
+!modules/**
+!packages/**
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!turbo.json
+
+# Ignore node_modules and dist directories in the apps & packages
+**/node_modules/
+**/dist/

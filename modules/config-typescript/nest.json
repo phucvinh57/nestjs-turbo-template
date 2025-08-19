@@ -1,0 +1,21 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "./base.json",
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": false,
+		"incremental": true,
+		"module": "commonjs",
+		"moduleResolution": "Node10",
+		"strictPropertyInitialization": false,
+		"noFallthroughCasesInSwitch": false,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"strictBindCallApply": true
+	}
+}

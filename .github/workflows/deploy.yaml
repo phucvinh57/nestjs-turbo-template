@@ -1,0 +1,80 @@
+name: Deploy Ec2
+on:
+  push:
+    branches:
+      - main
+      - development
+env:
+  ECR_REPOSITORY: lfg-fmv
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    outputs:
+      ecr-image: ${{ steps.metadata-ecr.outputs.name }}
+      # ecr-version: ${{ steps.set-version.outputs.version }}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-session-name: OIDCSession
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_ASSUME }}
+          aws-region: ap-southeast-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Generate metadata ECR
+        id: metadata-ecr
+        run: |
+          echo "name=${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}" >> "$GITHUB_OUTPUT"
+      # - name: Set version
+      #   id: set-version
+      #   uses: fluxion-labs/versioning-action@main
+      - name: Build Docker Image to Amazon ECR
+        id: build-and-push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: apps/api/Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
+          # platforms: linux/arm64
+          push: true
+          provenance: false
+          tags: ${{ steps.metadata-ecr.outputs.name }}/${{ github.ref_name }}:${{ github.sha }}
+  # ssh_ec2:
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-deploy
+  #   if: github.ref_type != 'tag' && needs.build-and-deploy.result == 'success'
+  #   steps:
+  #     - name: Pull latest image from ECR and run container
+  #       uses: appleboy/ssh-action@v0.1.9
+  #       env:
+  #         AWS_REGION: ${{ secrets.AWS_REGION }}
+  #         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         ECR_LATEST_IMAGE: ${{ needs.build-and-deploy.outputs.ecr-image }}
+  #         IMAGE_TAG: ${{ needs.build-and-deploy.outputs.ecr-version }}
+  #       with:
+  #         key: ${{ secrets.AWS_EC2_PRIVATE_KEY }}
+  #         host: ${{ secrets.AWS_EC2_HOST }}
+  #         username: ${{ secrets.AWS_EC2_USERNAME }}
+  #         envs: AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_REGION,ECR_LATEST_IMAGE,IMAGE_TAG
+  #         script: |
+  #           echo "Docker Image Tag: $IMAGE_TAG"
+  #           cd lfg-node-system-ec2
+  #           export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  #           export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  #           export AWS_REGION=${AWS_REGION}
+  #           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_LATEST_IMAGE:$IMAGE_TAG
+  #           docker image prune -af
+  #           docker pull $ECR_LATEST_IMAGE:$IMAGE_TAG
+  #           docker-compose up -d --build --detach
