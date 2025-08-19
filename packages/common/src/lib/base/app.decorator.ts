@@ -75,7 +75,7 @@ export const FmvResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params
 		items = { $ref: getSchemaPath(resDTO) };
 	}
 	const properties: Record<string, SchemaObject | ReferenceObject> = {
-		status: { type: 'number', example: 1 },
+		message: { type: 'string', example: 'Success' },
 		data: params?.isArray ? { type: 'array', items } : items,
 	};
 	return applyDecorators(

@@ -1,10 +1,11 @@
-import { FmvResponse } from '@fmv/common';
+import { FmvPaginateResponse } from '@fmv/common';
 import { FmvController } from '@fmv/guard';
 import { Get } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
 
 import { ApiRoute } from '@/api/api.service';
 import { PublicService } from './public.service';
+import { SampleDataDto } from './public.dto';
 
 @FmvController(ApiRoute.PUBLIC)
 @Throttle({
@@ -14,8 +15,8 @@ import { PublicService } from './public.service';
 export class PublicController {
 	constructor(private readonly publicService: PublicService) {}
 	@Get('hello')
-	@FmvResponse(String)
-	hello(): Promise<string> {
+	@FmvPaginateResponse(SampleDataDto)
+	hello() {
 		return this.publicService.hello();
 	}
 }

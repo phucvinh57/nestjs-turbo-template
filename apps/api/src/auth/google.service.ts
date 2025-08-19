@@ -13,7 +13,6 @@ export class GoogleService extends ApiService implements OnModuleInit {
 			clientId: this.config.get<string>('api.auth.google.clientId'),
 			clientSecret: this.config.get<string>('api.auth.google.clientSecret'),
 		});
-		super.onModuleInit();
 	}
 
 	async getUserInfo(accessToken: string): Promise<GoogleUser> {

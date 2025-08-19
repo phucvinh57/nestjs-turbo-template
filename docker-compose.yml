@@ -1,16 +1,10 @@
-name: fmv
 services:
-  casdoor:
-    image: casbin/casdoor:latest
+  postgres:
+    image: postgres:latest
     environment:
-      - driverName=postgres
-      - dataSourceName=postgres://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@docker-services-postgres-1:5432/fmv-casdoor?sslmode=disable
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=helloworld
+      - POSTGRES_DB=sample
     ports:
-      - "8000:8000"
-      - "7001:8000"
-    networks:
-      - docker-services_default
+      - "5432:5432"
     restart: always
-networks:
-  docker-services_default:
-    external: true

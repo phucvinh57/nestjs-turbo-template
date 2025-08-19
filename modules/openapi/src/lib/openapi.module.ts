@@ -6,7 +6,7 @@ import { OpenApiMiddleware } from './openapi.middleware';
 
 @Global()
 @Module({
-	imports: [ConfigModule('openapi', OpenAPIConfig, 'openapi-docs')],
+	imports: [ConfigModule('openapi', OpenAPIConfig, 'swagger')],
 })
 export class OpenApiModule implements NestModule {
 	constructor(private readonly config: ConfigService) {}

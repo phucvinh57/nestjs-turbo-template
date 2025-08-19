@@ -2,9 +2,8 @@ import { PaginatedPrismaClient, PrismaFMV } from '@fmv/db';
 import { FmvControllerOptions } from '@fmv/guard';
 import { PinoLogger } from '@fmv/logger';
 import { S3Service } from '@fmv/s3';
-import { Inject, OnModuleInit } from '@nestjs/common';
+import { Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import Stripe from 'stripe';
 
 export const ApiRoute = Object.freeze({
 	PAYMENT: { path: 'payments', tag: 'Payment' },
@@ -19,7 +18,7 @@ export const ApiRoute = Object.freeze({
 	MAP: { path: 'map', tag: 'Map' },
 }) satisfies Record<string, FmvControllerOptions>;
 
-export abstract class ApiService implements OnModuleInit {
+export abstract class ApiService {
 	@Inject(ConfigService)
 	protected readonly config: ConfigService<unknown, true>;
 
@@ -31,12 +30,4 @@ export abstract class ApiService implements OnModuleInit {
 
 	@Inject(S3Service)
 	protected readonly s3: S3Service;
-
-	protected stripe: Stripe;
-
-	onModuleInit() {
-		const stripeSecretKey = this.config.get<string>('api.stripe.secretKey');
-		this.stripe = new Stripe(stripeSecretKey);
-		this.logger.setContext(this.constructor.name);
-	}
 }

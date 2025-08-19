@@ -1,8 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
   output          = "../../../node_modules/@prisma/fmv-client"
-  previewFeatures = ["relationJoins", "postgresqlExtensions"]
-  extensions = [postgis("3.6")]
 }
 
 datasource db {

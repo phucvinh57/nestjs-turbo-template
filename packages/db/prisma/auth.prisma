@@ -5,7 +5,7 @@ enum OAuth2Provider {
 
 model OAuthAccount {
   user   User   @relation(fields: [userId], references: [id])
-  userId String @map("user_id") @db.VarChar(25)
+  userId String @map("user_id")
 
   provider         OAuth2Provider
   externalId       String         @map("external_id") @db.VarChar(255)
