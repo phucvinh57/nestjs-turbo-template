@@ -1,5 +1,5 @@
 import { HttpStatus } from '@nestjs/common';
-import type { AppError } from '@sample/common';
+import type { AppError } from '@packages/common';
 
 export type S3Code = 'GET_PRESIGNED_FAILED' | 'REMOVE_FAILED';
 

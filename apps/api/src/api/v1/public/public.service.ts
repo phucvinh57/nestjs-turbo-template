@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IPag } from '@sample/common';
+import { IPag } from '@packages/common';
 import { ApiService } from '@/api/api.service';
 import { SampleDataDto } from './public.dto';
 

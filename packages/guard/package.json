@@ -1,5 +1,5 @@
 {
-	"name": "@sample/guard",
+	"name": "@packages/guard",
 	"version": "0.0.1",
 	"private": true,
 	"license": "MIT",
@@ -26,8 +26,8 @@
 		}
 	},
 	"dependencies": {
-		"@sample/common": "workspace:*",
-		"@sample/config": "workspace:*",
+		"@packages/common": "workspace:*",
+		"@packages/config": "workspace:*",
 		"@nestjs/common": "^11.1.6",
 		"@nestjs/config": "^4.0.2",
 		"@nestjs/core": "^11.1.6",
@@ -40,7 +40,7 @@
 		"passport-jwt": "^4.0.1"
 	},
 	"devDependencies": {
-		"@sample/config-typescript": "workspace:*",
+		"@modules/config-typescript": "workspace:*",
 		"@types/jsonwebtoken": "^9.0.10",
 		"@types/node": "^24.3.0",
 		"@types/passport-jwt": "^4.0.1",

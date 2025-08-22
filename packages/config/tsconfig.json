@@ -1,5 +1,5 @@
 {
-	"extends": "@sample/config-typescript/nest.json",
+	"extends": "@modules/config-typescript/nest.json",
 	"compilerOptions": {
 		"allowJs": true,
 		"baseUrl": "src",

@@ -1,5 +1,5 @@
 {
-	"name": "@sample/prisma",
+	"name": "@modules/prisma",
 	"version": "0.0.1",
 	"private": true,
 	"license": "UNLICENSED",
@@ -31,7 +31,7 @@
 		"prisma-extension-pagination": "^0.7.5"
 	},
 	"devDependencies": {
-		"@sample/config-typescript": "workspace:*",
+		"@modules/config-typescript": "workspace:*",
 		"@types/node": "^24.3.0",
 		"fastify": "^5.5.0",
 		"ts-loader": "^9.5.2",

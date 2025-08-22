@@ -94,9 +94,9 @@ Before proceeding with the setup, make sure you have the following tools install
   - `game-api`: Client-side for customer can interactive with system and payment
   - `merchant-api`: Developer-side for game publisher can manage project and control game version...
 - `modules`: Internal-package
-  - `@sample/config-${name}`: For config Typescript, Eslint, Prettier, Jest...
-  - `@sample/prisma`: BaseORM engine to query database
-  - `@sample/health`: Heartbeat internal service and external service up/down
+  - `@modules/config-${name}`: For config Typescript, Eslint, Prettier, Jest...
+  - `@modules/prisma`: BaseORM engine to query database
+  - `@packages/health`: Heartbeat internal service and external service up/down
 - `packages`: external-library
   - `@packages/common`: Reused in every microservice
   - `@packages/gecko`: Get current coin/token price

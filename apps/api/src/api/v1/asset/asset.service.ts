@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { basename, extname } from 'node:path';
 import { Injectable } from '@nestjs/common';
-import { AppException, BasedUploadDto, BaseUploadRequestDto, CONTENT_TYPE, SIZE } from '@sample/common';
+import { AppException, BasedUploadDto, BaseUploadRequestDto, CONTENT_TYPE, SIZE } from '@packages/common';
 import { ApiService } from '@/api/api.service';
 import { APP_ERROR } from '@/app/app.exception';
 

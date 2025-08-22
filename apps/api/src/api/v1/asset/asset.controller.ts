@@ -1,7 +1,7 @@
 import { Body, ParseArrayPipe, Post } from '@nestjs/common';
 import { ApiBody } from '@nestjs/swagger';
-import { BasedUploadDto, BaseUploadRequestDto, CreatedResponse } from '@sample/common';
-import { AppController, JwtInfo, User } from '@sample/guard';
+import { BasedUploadDto, BaseUploadRequestDto, CreatedResponse } from '@packages/common';
+import { AppController, JwtInfo, User } from '@packages/guard';
 import { ApiRoute } from '@/api/api.service';
 import { AssetService } from './asset.service';
 

@@ -1,8 +1,8 @@
 import { Get, UseGuards } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { ApiHeader } from '@nestjs/swagger';
-import { OkResponse } from '@sample/common';
-import { AppController } from '@sample/guard';
+import { OkResponse } from '@packages/common';
+import { AppController } from '@packages/guard';
 import { ApiService } from '@/api/api.service';
 import { TaskGuard } from './task.guard';
 

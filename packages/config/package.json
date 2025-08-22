@@ -1,5 +1,5 @@
 {
-	"name": "@sample/config",
+	"name": "@packages/config",
 	"version": "0.0.1",
 	"private": true,
 	"license": "UNLICENSED",
@@ -34,7 +34,7 @@
 		"yaml": "^2.8.0"
 	},
 	"devDependencies": {
-		"@sample/config-typescript": "workspace:*",
+		"@modules/config-typescript": "workspace:*",
 		"@types/node": "^24.0.14",
 		"typescript": "5.8.3"
 	}

@@ -1,9 +1,9 @@
+import { PinoLogger } from '@modules/logger';
 import { Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { PaginatedPrismaClient, PrismaFMV } from '@sample/db';
-import { AppControllerOptions } from '@sample/guard';
-import { PinoLogger } from '@sample/logger';
-import { S3Service } from '@sample/s3';
+import { PaginatedPrismaClient, PrismaFMV } from '@packages/db';
+import { AppControllerOptions } from '@packages/guard';
+import { S3Service } from '@packages/s3';
 
 export const ApiRoute = Object.freeze({
 	PAYMENT: { path: 'payments', tag: 'Payment' },

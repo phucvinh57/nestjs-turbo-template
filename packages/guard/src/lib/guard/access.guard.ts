@@ -1,7 +1,7 @@
 import { ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
-import { AppException } from '@sample/common';
+import { AppException } from '@packages/common';
 import { JsonWebTokenError, NotBeforeError, TokenExpiredError } from 'jsonwebtoken';
 import type { Observable } from 'rxjs';
 import { GUARD_ERROR } from '../guard.exception';

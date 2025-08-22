@@ -1,4 +1,4 @@
-import { ApiString } from '@sample/common';
+import { ApiString } from '@packages/common';
 
 export class SampleDataDto {
 	@ApiString()

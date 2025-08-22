@@ -1,5 +1,5 @@
 {
-	"name": "@sample/sqs",
+	"name": "@packages/sqs",
 	"version": "0.0.1",
 	"private": true,
 	"license": "UNLICENSED",
@@ -27,14 +27,14 @@
 	},
 	"dependencies": {
 		"@aws-sdk/client-sqs": "^3.873.0",
-		"@sample/common": "workspace:*",
-		"@sample/config": "workspace:*",
+		"@packages/common": "workspace:*",
+		"@packages/config": "workspace:*",
 		"@nestjs/common": "^11.1.6",
 		"@nestjs/config": "^4.0.2",
 		"@nestjs/core": "^11.1.6"
 	},
 	"devDependencies": {
-		"@sample/config-typescript": "workspace:*",
+		"@modules/config-typescript": "workspace:*",
 		"@types/node": "^24.3.0",
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",

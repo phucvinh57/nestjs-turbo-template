@@ -1,6 +1,6 @@
 import { Global, MiddlewareConsumer, Module, NestModule, RequestMethod } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { ConfigModule } from '@sample/config';
+import { ConfigModule } from '@packages/config';
 import { OpenAPIConfig } from './openapi.config';
 import { OpenApiMiddleware } from './openapi.middleware';
 

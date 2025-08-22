@@ -1,6 +1,6 @@
 import { Global, Module } from '@nestjs/common';
 import { DiscoveryModule } from '@nestjs/core';
-import { AWSConfig, ConfigModule } from '@sample/config';
+import { AWSConfig, ConfigModule } from '@packages/config';
 import { SqsRegistry } from './sqs.registry';
 import { SqsService } from './sqs.service';
 

@@ -1,4 +1,4 @@
-import { ApiBoolean, ApiString } from '@sample/common';
+import { ApiBoolean, ApiString } from '@packages/common';
 
 export class OAuthParams {
 	@ApiString()

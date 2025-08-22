@@ -1,7 +1,7 @@
 import { Get } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
-import { PaginatedResponse } from '@sample/common';
-import { AppController } from '@sample/guard';
+import { PaginatedResponse } from '@packages/common';
+import { AppController } from '@packages/guard';
 
 import { ApiRoute } from '@/api/api.service';
 import { SampleDataDto } from './public.dto';

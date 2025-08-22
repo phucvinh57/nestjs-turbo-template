@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import { ConfigModule } from '@sample/config';
+import { ConfigModule } from '@packages/config';
 import { CacheConfig } from './cache.config';
 import { CacheProviders } from './cache.provider';
 import { CacheService } from './cache.service';

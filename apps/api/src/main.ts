@@ -6,15 +6,14 @@ import fastifyCookie from '@fastify/cookie';
 import fastifyHelmet from '@fastify/helmet';
 import fastifyMultipart from '@fastify/multipart';
 import fastifyOauth2 from '@fastify/oauth2';
-// import oauth2 from '@fastify/oauth2'
+import { Logger } from '@modules/logger';
+import { OpenAPIConfig, openApiSetup } from '@modules/openapi';
 //! Nest Configuration
 import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, type NestFastifyApplication } from '@nestjs/platform-fastify';
-import { CORS, CookieConfig, Env, helmetConfig, ServerConfig, uploadConfig } from '@sample/common';
-import { Logger } from '@sample/logger';
-import { OpenAPIConfig, openApiSetup } from '@sample/openapi';
+import { CORS, CookieConfig, Env, helmetConfig, ServerConfig, uploadConfig } from '@packages/common';
 import { FastifyInstance } from 'fastify';
 //! App Configuration
 import { AppModule } from '@/app/app.module';

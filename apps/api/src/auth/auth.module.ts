@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { GuardModule } from '@sample/guard';
+import { GuardModule } from '@packages/guard';
 import { AppleService } from './apple.service';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';

@@ -1,8 +1,8 @@
 import { BadRequestException, Body, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
-import { CacheService } from '@sample/cache';
-import { CreatedResponse, FlatQuery, IReq, IRes } from '@sample/common';
-import { AppController, GuardCookie, GuardService, JwtInfo } from '@sample/guard';
+import { CacheService } from '@packages/cache';
+import { CreatedResponse, FlatQuery, IReq, IRes } from '@packages/common';
+import { AppController, GuardCookie, GuardService, JwtInfo } from '@packages/guard';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 import { ApiRoute } from '@/api/api.service';
 import { LoginByOAuthTokenDto, LoginDto, LoginResp, OAuthParams, RegisterDto } from './auth.dto';

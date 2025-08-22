@@ -1,7 +1,7 @@
 import { DeleteMessageBatchCommand, DeleteMessageCommand, Message, ReceiveMessageCommand, SQSClient } from '@aws-sdk/client-sqs';
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { AWSConfig } from '@sample/config';
+import { AWSConfig } from '@packages/config';
 import type { ISqsOption } from './sqs.interface';
 
 @Injectable()
