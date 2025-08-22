@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="./data/images/logo.png" height="256"/>
-</p>
-
-<p align="center">
   <a href="https://node.js.org/" alt="NodeJS" target="_blank">
     <img src="https://img.shields.io/badge/node.js-6DA55F.svg?style=for-the-badge&logo=node.js&logoColor=white" />
   </a>
@@ -21,21 +17,13 @@
   </a>
 </p>
 
-<h1 align="center">HELIX GAME</h1>
+<h1 align="center">NestJS + Turbo monorepo</h1>
 <h3 align="center">
-  This repository contains the source code and documentation for the HELIX project.<br></br>
+  This repository contains the source code and documentation for the sample NestJS monorepo project.<br></br>
   It uses a Turborepo structure for managing microservices and packages. Follow the steps below to get started with development and deployment.
 </h3>
 
-# 1. Version
-
-- Version document: 1.0.1
-- Created by: Lý Tại Trường (Smith)
-- Created date: 29 Nov 2024.
-- Updated by: Lý Tại Trường - Nguyễn Phúc Vinh
-- Updated date: 26 Aug 2024.
-
-# 2. Prerequisites
+# 1. Prerequisites
 
 Before proceeding with the setup, make sure you have the following tools installed on your system:
 
@@ -77,7 +65,7 @@ Before proceeding with the setup, make sure you have the following tools install
    turbo --version # should be >= 2.2
    ```
 
-# 3. [TurboRepo](https://turbo.build/) Guide
+# 2. [TurboRepo](https://turbo.build/) Guide
 
 1. **Familiar command line**: [List TurboRepo command line](https://turbo.build/repo/docs/reference/run)
 
@@ -106,9 +94,9 @@ Before proceeding with the setup, make sure you have the following tools install
   - `game-api`: Client-side for customer can interactive with system and payment
   - `merchant-api`: Developer-side for game publisher can manage project and control game version...
 - `modules`: Internal-package
-  - `@fmv/config-${name}`: For config Typescript, Eslint, Prettier, Jest...
-  - `@fmv/prisma`: BaseORM engine to query database
-  - `@fmv/health`: Heartbeat internal service and external service up/down
+  - `@sample/config-${name}`: For config Typescript, Eslint, Prettier, Jest...
+  - `@sample/prisma`: BaseORM engine to query database
+  - `@sample/health`: Heartbeat internal service and external service up/down
 - `packages`: external-library
   - `@packages/common`: Reused in every microservice
   - `@packages/gecko`: Get current coin/token price
@@ -160,31 +148,4 @@ Before proceeding with the setup, make sure you have the following tools install
   ## example
   git push origin feat(HEX:001): initial project"
   ```
-
-## Memo
-
-### S3 folders
-
-```
-public/
-├── users/
-│   └── <user_id>/
-│       └── avatar.jpg
-├── avatars/
-│   ├── web/<id>
-│   └── nft/<id>
-└── games/
-    └── <game_id>/
-        ├── banners/
-        ├── trailers/
-        └── screenshots/
-private/
-├── users/
-│   └── <user_id>/
-│       └── kyc/
-└── games/
-    └── <game_id>/
-        └── <version>/
-            ├── <platform>.zip
-            └── metadata.json
-```
+  

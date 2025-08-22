@@ -1,5 +1,5 @@
 {
-	"extends": "@fmv/config-typescript/nest.json",
+	"extends": "@sample/config-typescript/nest.json",
 	"compilerOptions": {
 		"allowJs": true,
 		"baseUrl": "src",

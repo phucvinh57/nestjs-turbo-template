@@ -1,6 +1,6 @@
-import { IReq } from '@fmv/common';
 import { applyDecorators, Controller, createParamDecorator, ExecutionContext, SetMetadata, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiCookieAuth, ApiTags } from '@nestjs/swagger';
+import { IReq } from '@sample/common';
 
 import { JwtAccessGuard } from './guard/access.guard';
 import { GuardType, JwtInfo } from './guard.interface';

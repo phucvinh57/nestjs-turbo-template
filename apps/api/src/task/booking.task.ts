@@ -1,8 +1,8 @@
-import { FmvOkResponse } from '@fmv/common';
-import { FmvController } from '@fmv/guard';
 import { Get, UseGuards } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { ApiHeader } from '@nestjs/swagger';
+import { FmvOkResponse } from '@sample/common';
+import { FmvController } from '@sample/guard';
 import { ApiService } from '@/api/api.service';
 import { TaskGuard } from './task.guard';
 

@@ -1,5 +1,5 @@
-import type { AppError } from '@fmv/common';
 import { HttpStatus } from '@nestjs/common';
+import type { AppError } from '@sample/common';
 
 export type GeneralCode = 'INVALID_CONTENT_TYPE';
 

@@ -1,7 +1,7 @@
-import { ConfigModule } from '@fmv/config';
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
+import { ConfigModule } from '@sample/config';
 import { GuardConfig } from './guard.config';
 import { GuardService } from './guard.service';
 import { JwtAccessStrategy } from './strategy/access.strategy';

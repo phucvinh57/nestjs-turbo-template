@@ -4,22 +4,12 @@
 	"globalEnv": ["NODE_ENV"],
 	"tasks": {
 		"dev": {
-			"dependsOn": ["^prisma:generate"],
 			"cache": false,
 			"persistent": true
 		},
 		"build": {
-			"dependsOn": ["^prisma:generate", "^build"],
+			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
-		},
-		"lint": {},
-		"test": {},
-		"test:e2e": {},
-		"prisma:generate": {
-			"cache": false
-		},
-		"prisma:create": {
-			"cache": false
 		}
 	}
 }

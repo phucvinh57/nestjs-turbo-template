@@ -1,3 +1,3 @@
-import { config } from '@fmv/config-jest/nest';
+import { config } from '@sample/config-jest/nest';
 
 export default config;

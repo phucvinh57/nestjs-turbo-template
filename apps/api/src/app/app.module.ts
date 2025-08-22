@@ -1,15 +1,13 @@
-import { AxiosModule } from '@fmv/axios';
-import { CacheModule } from '@fmv/cache';
-import { ConfigModule } from '@fmv/config';
-import { PrismaClient, PrismaFMV } from '@fmv/db';
-import { HealthModule } from '@fmv/health';
-import { LoggerModule } from '@fmv/logger';
-import { OpenApiModule } from '@fmv/openapi';
-import { PrismaModule } from '@fmv/prisma';
-import { S3Module } from '@fmv/s3';
-import { SqsModule } from '@fmv/sqs';
 import { Module } from '@nestjs/common';
 import { ConfigModule as NestConfigModule } from '@nestjs/config';
+import { CacheModule } from '@sample/cache';
+import { ConfigModule } from '@sample/config';
+import { PrismaClient, PrismaFMV } from '@sample/db';
+import { LoggerModule } from '@sample/logger';
+import { OpenApiModule } from '@sample/openapi';
+import { PrismaModule } from '@sample/prisma';
+import { S3Module } from '@sample/s3';
+import { SqsModule } from '@sample/sqs';
 import { TaskModule } from '@/task/task.module';
 import { ApiConfig } from './app.config';
 import { AppRoutes } from './app.routes';
@@ -18,9 +16,7 @@ import { AppRoutes } from './app.routes';
 	imports: [
 		NestConfigModule.forRoot({ isGlobal: true }),
 		ConfigModule('api', ApiConfig),
-		AxiosModule,
 		CacheModule,
-		HealthModule,
 		LoggerModule,
 		OpenApiModule,
 		S3Module,

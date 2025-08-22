@@ -4,10 +4,10 @@ import { getSignedUrl as getCloudFrontSignedUrl } from '@aws-sdk/cloudfront-sign
 import { createPresignedPost } from '@aws-sdk/s3-presigned-post';
 import type { Conditions } from '@aws-sdk/s3-presigned-post/dist-types/types';
 import { getSignedUrl as getS3SignedUrl } from '@aws-sdk/s3-request-presigner';
-import { AppCatch, SIZE, TTL } from '@fmv/common';
-import { AWSConfig } from '@fmv/config';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { AppCatch, SIZE, TTL } from '@sample/common';
+import { AWSConfig } from '@sample/config';
 import { CloudfrontConfig, S3Config } from 's3.config';
 import { S3_ERROR } from './s3.exception';
 import { type S3BucketType, S3SignPostOption, S3SignPutOption, S3UploadRequest } from './s3.interface';

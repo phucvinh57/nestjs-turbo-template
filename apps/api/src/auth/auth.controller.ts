@@ -1,8 +1,8 @@
-import { CacheService } from '@fmv/cache';
-import { FlatQuery, FmvCreatedResponse, IReq, IRes } from '@fmv/common';
-import { FmvController, GuardCookie, GuardService, JwtInfo } from '@fmv/guard';
 import { BadRequestException, Body, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
+import { CacheService } from '@sample/cache';
+import { FlatQuery, FmvCreatedResponse, IReq, IRes } from '@sample/common';
+import { FmvController, GuardCookie, GuardService, JwtInfo } from '@sample/guard';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 import { ApiRoute } from '@/api/api.service';
 import { LoginByOAuthTokenDto, LoginDto, LoginResp, OAuthParams, RegisterDto } from './auth.dto';

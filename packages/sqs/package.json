@@ -1,5 +1,5 @@
 {
-	"name": "@fmv/sqs",
+	"name": "@sample/sqs",
 	"version": "0.0.1",
 	"private": true,
 	"license": "UNLICENSED",
@@ -27,14 +27,14 @@
 	},
 	"dependencies": {
 		"@aws-sdk/client-sqs": "^3.848.0",
-		"@fmv/common": "workspace:*",
-		"@fmv/config": "workspace:*",
+		"@sample/common": "workspace:*",
+		"@sample/config": "workspace:*",
 		"@nestjs/common": "^11.1.4",
 		"@nestjs/config": "^4.0.2",
 		"@nestjs/core": "^11.1.4"
 	},
 	"devDependencies": {
-		"@fmv/config-typescript": "workspace:*",
+		"@sample/config-typescript": "workspace:*",
 		"@types/node": "^24.0.14",
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",

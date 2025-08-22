@@ -1,4 +1,4 @@
-import { ApiBoolean, ApiString } from '@fmv/common';
+import { ApiBoolean, ApiString } from '@sample/common';
 
 export class OAuthParams {
 	@ApiString()

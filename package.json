@@ -1,21 +1,19 @@
 {
-	"name": "fmv-apis",
+	"name": "nestjs-turborepo-template",
 	"author": "Nguyen Phuc Vinh",
 	"version": "0.0.1",
 	"private": true,
 	"license": "MIT",
-	"description": "HELIX API BACKEND SITE",
+	"description": "NestJS + Turborepo template",
 	"contributors": [
 		{
 			"name": "Nguyen Phuc Vinh",
-			"email": "npvinh@quoxent.com"
+			"email": "npvinh0507@gmail.com"
 		}
 	],
 	"scripts": {
 		"dev": "turbo dev --concurrency=15",
-		"dev:api": "turbo dev --filter=fmv-api --concurrency=2",
-		"build": "turbo build",
-		"build:fmv": "turbo build --filter=fmv-api --concurrency=2",
+		"build": "turbo run build",
 		"format": "biome format --write",
 		"lint": "pnpm biome check --write",
 		"test": "turbo test",
@@ -28,7 +26,7 @@
 		"@biomejs/biome": "2.1.2",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
-		"@fmv/config-typescript": "workspace:*",
+		"@sample/config-typescript": "workspace:*",
 		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"lefthook": "^1.12.2",
@@ -39,14 +37,15 @@
 			"path": "cz-conventional-changelog"
 		}
 	},
+	"packageManager": "bun@1.2.20",
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"
 		]
 	},
-	"packageManager": "pnpm@10.13.1",
-	"engines": {
-		"pnpm": ">=9",
-		"node": ">=22"
-	}
+	"workspaces": [
+		"apps/*",
+		"modules/*",
+		"packages/*"
+	]
 }

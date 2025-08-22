@@ -1,4 +1,4 @@
-import { BaseAppConfig } from '@fmv/common';
+import { BaseAppConfig } from '@sample/common';
 import { Type } from 'class-transformer';
 import { IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 

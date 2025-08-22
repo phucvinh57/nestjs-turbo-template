@@ -1,10 +1,10 @@
-import { AppFilter, AppInterceptor } from '@fmv/common';
-import { PrismaClientKnownRequestError } from '@fmv/db';
-import { RoleGuard } from '@fmv/guard';
-import { PrismaFilter } from '@fmv/prisma';
 import { Module, ValidationPipe } from '@nestjs/common';
 import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { AppFilter, AppInterceptor } from '@sample/common';
+import { PrismaClientKnownRequestError } from '@sample/db';
+import { RoleGuard } from '@sample/guard';
+import { PrismaFilter } from '@sample/prisma';
 import { ApiV1Module } from '@/api/v1/v1.module';
 import { AuthModule } from '@/auth/auth.module';
 

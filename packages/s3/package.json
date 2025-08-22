@@ -1,5 +1,5 @@
 {
-	"name": "@fmv/s3",
+	"name": "@sample/s3",
 	"version": "0.0.1",
 	"private": true,
 	"license": "UNLICENSED",
@@ -30,8 +30,8 @@
 		"@aws-sdk/cloudfront-signer": "^3.821.0",
 		"@aws-sdk/s3-presigned-post": "^3.848.0",
 		"@aws-sdk/s3-request-presigner": "^3.848.0",
-		"@fmv/common": "workspace:*",
-		"@fmv/config": "workspace:*",
+		"@sample/common": "workspace:*",
+		"@sample/config": "workspace:*",
 		"@nestjs/common": "^11.1.4",
 		"@nestjs/config": "^4.0.2",
 		"@nestjs/core": "^11.1.4",
@@ -39,7 +39,7 @@
 		"class-validator": "^0.14.2"
 	},
 	"devDependencies": {
-		"@fmv/config-typescript": "workspace:*",
+		"@sample/config-typescript": "workspace:*",
 		"@types/node": "^24.0.14",
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",

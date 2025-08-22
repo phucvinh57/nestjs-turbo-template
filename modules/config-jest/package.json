@@ -1,5 +1,5 @@
 {
-	"name": "@fmv/config-jest",
+	"name": "@sample/config-jest",
 	"version": "0.0.1",
 	"private": true,
 	"license": "MIT",

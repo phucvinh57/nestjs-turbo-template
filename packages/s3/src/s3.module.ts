@@ -1,5 +1,5 @@
-import { AWSConfig, ConfigModule } from '@fmv/config';
 import { Global, Module } from '@nestjs/common';
+import { AWSConfig, ConfigModule } from '@sample/config';
 import { S3Config } from './s3.config';
 import { S3Service } from './s3.service';
 

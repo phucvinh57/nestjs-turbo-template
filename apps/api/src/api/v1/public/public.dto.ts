@@ -1,4 +1,4 @@
-import { ApiString } from '@fmv/common';
+import { ApiString } from '@sample/common';
 
 export class SampleDataDto {
 	@ApiString()

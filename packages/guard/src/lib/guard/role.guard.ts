@@ -1,6 +1,6 @@
-import { AppException, IReq } from '@fmv/common';
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
+import { AppException, IReq } from '@sample/common';
 import type { Observable } from 'rxjs';
 
 import { GUARD_ERROR } from '../guard.exception';

@@ -1,6 +1,6 @@
-import { AWSConfig, ConfigModule } from '@fmv/config';
 import { Global, Module } from '@nestjs/common';
 import { DiscoveryModule } from '@nestjs/core';
+import { AWSConfig, ConfigModule } from '@sample/config';
 import { SqsRegistry } from './sqs.registry';
 import { SqsService } from './sqs.service';
 

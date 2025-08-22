@@ -1,7 +1,7 @@
-import { BasedUploadDto, BaseUploadRequestDto, FmvCreatedResponse } from '@fmv/common';
-import { FmvController, JwtInfo, User } from '@fmv/guard';
 import { Body, ParseArrayPipe, Post } from '@nestjs/common';
 import { ApiBody } from '@nestjs/swagger';
+import { BasedUploadDto, BaseUploadRequestDto, FmvCreatedResponse } from '@sample/common';
+import { FmvController, JwtInfo, User } from '@sample/guard';
 import { ApiRoute } from '@/api/api.service';
 import { AssetService } from './asset.service';
 
