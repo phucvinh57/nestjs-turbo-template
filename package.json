@@ -15,7 +15,7 @@
 		"dev": "turbo dev --concurrency=15",
 		"build": "turbo run build",
 		"format": "biome format --write",
-		"lint": "pnpm biome check --write",
+		"lint": "biome check --write",
 		"test": "turbo test",
 		"test:e2e": "turbo test:e2e",
 		"commit": "cz",
@@ -23,14 +23,14 @@
 		"prepare": "lefthook install"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.1.2",
+		"@biomejs/biome": "2.2.0",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@sample/config-typescript": "workspace:*",
 		"commitizen": "^4.3.1",
 		"cz-conventional-changelog": "^3.3.0",
-		"lefthook": "^1.12.2",
-		"turbo": "^2.5.5"
+		"lefthook": "^1.12.3",
+		"turbo": "^2.5.6"
 	},
 	"config": {
 		"commitizen": {

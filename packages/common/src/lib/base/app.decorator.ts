@@ -91,15 +91,15 @@ export const FmvResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params
 	);
 };
 
-export const FmvOkResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params?: FmvResponseMetadata) => {
+export const OkResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params?: FmvResponseMetadata) => {
 	return FmvResponse(resDTO, { ...params, status: 200 });
 };
 
-export const FmvCreatedResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params?: FmvResponseMetadata) => {
+export const CreatedResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO, params?: FmvResponseMetadata) => {
 	return FmvResponse(resDTO, { ...params, status: 201 });
 };
 
-export const FmvPaginateResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO) => {
+export const PaginatedResponse = <ResDTO extends Type<unknown>>(resDTO: ResDTO) => {
 	let items: SchemaObject | ReferenceObject;
 	if (resDTO.name === 'String' || resDTO.name === 'Number' || resDTO.name === 'Boolean') {
 		items = { type: resDTO.name.toLowerCase() };

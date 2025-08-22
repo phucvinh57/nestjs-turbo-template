@@ -10,14 +10,15 @@ export const Roles = (...roles: string[]) => SetMetadata(GuardType.ROLE, roles);
 export const IS_PUBLIC_KEY = 'isPublic';
 export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);
 
-export type FmvControllerOptions = {
+export type AppControllerOptions = {
 	path: string;
 	auth?: boolean;
 	tag: string;
 	version?: string;
 };
+
 //! The order of guard is important, which will be execute first
-export const FmvController = ({ path, auth = true, tag = 'default', version }: FmvControllerOptions) => {
+export const AppController = ({ path, auth = true, tag = 'default', version }: AppControllerOptions) => {
 	const decorators = [Controller({ path, version }), ApiTags(tag)];
 	if (auth) {
 		decorators.push(UseGuards(JwtAccessGuard), ApiBearerAuth(), ApiCookieAuth());

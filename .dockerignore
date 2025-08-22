@@ -4,10 +4,9 @@
 !modules/**
 !packages/**
 !package.json
-!pnpm-lock.yaml
-!pnpm-workspace.yaml
+!bun.lock
 !turbo.json
 
 # Ignore node_modules and dist directories in the apps & packages
-**/node_modules/
-**/dist/
+**/node_modules
+**/dist

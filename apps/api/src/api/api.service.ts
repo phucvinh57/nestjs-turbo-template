@@ -1,7 +1,7 @@
 import { Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PaginatedPrismaClient, PrismaFMV } from '@sample/db';
-import { FmvControllerOptions } from '@sample/guard';
+import { AppControllerOptions } from '@sample/guard';
 import { PinoLogger } from '@sample/logger';
 import { S3Service } from '@sample/s3';
 
@@ -16,7 +16,7 @@ export const ApiRoute = Object.freeze({
 	ASSET: { path: 'assets', tag: 'Asset' },
 	PUBLIC: { path: 'public', tag: 'Public', auth: false },
 	MAP: { path: 'map', tag: 'Map' },
-}) satisfies Record<string, FmvControllerOptions>;
+}) satisfies Record<string, AppControllerOptions>;
 
 export abstract class ApiService {
 	@Inject(ConfigService)

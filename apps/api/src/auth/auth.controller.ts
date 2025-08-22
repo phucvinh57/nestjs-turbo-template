@@ -1,15 +1,15 @@
 import { BadRequestException, Body, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
 import { CacheService } from '@sample/cache';
-import { FlatQuery, FmvCreatedResponse, IReq, IRes } from '@sample/common';
-import { FmvController, GuardCookie, GuardService, JwtInfo } from '@sample/guard';
+import { CreatedResponse, FlatQuery, IReq, IRes } from '@sample/common';
+import { AppController, GuardCookie, GuardService, JwtInfo } from '@sample/guard';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 import { ApiRoute } from '@/api/api.service';
 import { LoginByOAuthTokenDto, LoginDto, LoginResp, OAuthParams, RegisterDto } from './auth.dto';
 import { AuthService } from './auth.service';
 import { GoogleService } from './google.service';
 
-@FmvController(ApiRoute.AUTH)
+@AppController(ApiRoute.AUTH)
 export class AuthController {
 	constructor(
 		private readonly adapterHost: HttpAdapterHost,
@@ -20,14 +20,14 @@ export class AuthController {
 	) {}
 
 	@Post('login')
-	@FmvCreatedResponse(LoginResp)
+	@CreatedResponse(LoginResp)
 	async login(@Body() payload: LoginDto, @Res() res: IRes) {
 		const userId = await this.auth.login(payload);
 		return this._signTokens(res, { sub: userId }, payload.isWeb);
 	}
 
 	@Post('register')
-	@FmvCreatedResponse(LoginResp)
+	@CreatedResponse(LoginResp)
 	async register(@Body() payload: RegisterDto, @Res() res: IRes) {
 		const userId = await this.auth.register(payload);
 		return this._signTokens(res, { sub: userId }, payload.isWeb);
@@ -62,7 +62,7 @@ export class AuthController {
 	}
 
 	@Post('google/token')
-	@FmvCreatedResponse(LoginResp)
+	@CreatedResponse(LoginResp)
 	async exchangeGoogleCode(@Body() payload: LoginByOAuthTokenDto, @Res() res: IRes) {
 		const userInfo = await this.google.getUserInfo(payload.accessToken);
 		const userId = await this.google.createUser(userInfo, payload.refreshToken);
